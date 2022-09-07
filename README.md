@@ -10,7 +10,10 @@
    - [X] Windows
    - [ ] Linux
    - [ ] Mac OS
-### Итоги запуска
+### Как использовать
+1. Открыть скрипт
+2. Выбрать браузер
+3. При необходимости скачать драйвер на выбранный браузер
 ![Фото](https://github.com/ItzRxg3/discord-fakeqr/blob/main/qr_code.png?raw=true)
 ### Credits
   Автор оригинального кода для Google Chrome:
