@@ -1,4 +1,5 @@
 ## Discord Fake QR Code Generator
+  .exe версия лежит в Releases  
   Улучшенная версия токен граббера через qr код.  
   Поддерживаемые браузеры:
    - [x] Google Chrome
