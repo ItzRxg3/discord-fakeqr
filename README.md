@@ -12,4 +12,7 @@
 
 ### Credits
   Автор оригинального кода для Google Chrome:
-  [Astraa](https://github.com/AstraaDev/)
+  [Astraa](https://github.com/AstraaDev/)  
+
+  Перевод и доработка:
+  [Rxg3](https://github.com/ItzRxg3/)  
