@@ -99,7 +99,7 @@ def try_remove(path: str):
 
 
 def main(hook):
-    browser_name = browsers[browser_number]
+    browser_name = browsers[browser_number].get('name')
     if browser_name == 'Firefox':
         opts = webdriver.FirefoxOptions()
         opts.set_preference('detach', True)
@@ -217,7 +217,7 @@ print(b + f""" _____     _           ___  ____
 |  ___|_ _| | _____   / _ \\|  _ \\ 
 | |_ / _` | |/ / _ \\ | | | | |_) |
 {y}|  _| (_| |   <  __/ | |_| |  _ < 
-{y}|_|  \\__,_|_|\\_\\___|  \\__\\_\\_| \\_\\""")
+|_|  \\__,_|_|\\_\\___|  \\__\\_\\_| \\_\\""")
 print(w)
 print('=======================================')
 print('= https://github.com/ProgrammerPython =')
@@ -228,11 +228,11 @@ print('=======================================')
 
 browser_number = 0
 for i, browser_dict in enumerate(browsers.values(), start=1):
-    print(f'{y}[{b}{i}{y}]{w} - {b}' + browser_dict.get("name", "Имя не указано"))
+    print(f'{y}[{w}{i}{y}]{w} - {b}' + browser_dict.get("name", "Имя не указано"))
 
 while browser_number not in browsers.keys():
     try:
-        browser_number = int(input('Выберите свой браузер: '))
+        browser_number = int(input(w + 'Выберите свой браузер: '))
     except (ValueError, TypeError):
         pass
     if browser_number in browsers.keys():
