@@ -13,6 +13,7 @@
 ### Credits
   Автор оригинального кода для Google Chrome:
   [Astraa](https://github.com/AstraaDev/)  
+  [Код](https://github.com/AstraaDev/Discord-All-Tools-In-One/blob/main/util/8_TokenFakeQr/fakeqr.py)
 
   Перевод и доработка:
   [Rxg3](https://github.com/ItzRxg3/)  
