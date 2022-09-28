@@ -76,7 +76,7 @@ def getheaders(token=None):
 
 
 def logo_qr():
-    # paste the discord logo into the QR code
+    #Paste the discord logo onto the QR code
     im1 = Image.open('temp_qrcode_clear.png', 'r')
     im2 = Image.open('discord_ico.png', 'r')
     im1.paste(im2, (60, 55), im2)
@@ -84,7 +84,7 @@ def logo_qr():
 
 
 def paste_template():
-    # add border to code
+    #paste the finished QR code onto the nitro template
     im1 = Image.open('background.png', 'r')
     im2 = Image.open('qrcode_clear.png', 'r')
     im1.paste(im2, (20, 20))
@@ -99,7 +99,9 @@ def try_remove(path: str):
 
 
 def main(hook):
-    browser_name = browsers[browser_number].get('name')
+    browser_data = browsers[browser_number]
+    browser_name = browser_data.get("name")
+    driver_path = browser_data.get("path")
     if browser_name == 'Firefox':
         opts = webdriver.FirefoxOptions()
         opts.set_preference('detach', True)
@@ -121,7 +123,7 @@ def main(hook):
         browser_class = webdriver.Edge
 
     try:
-        driver = browser_class(options=opts, executable_path=r'driver/geckodriver.exe')
+        driver = browser_class(options=opts, executable_path=driver_path)
     except common.exceptions.SessionNotCreatedException as e:
         print(f"{y}[{Fore.LIGHTRED_EX}!{y}]{w} Ошибка: {e.msg}")
         input(f"{y}[{b}#{y}]{w} Нажмите ENTER для перезапуска")
@@ -217,22 +219,22 @@ print(b + f""" _____     _           ___  ____
 |  ___|_ _| | _____   / _ \\|  _ \\ 
 | |_ / _` | |/ / _ \\ | | | | |_) |
 {y}|  _| (_| |   <  __/ | |_| |  _ < 
-|_|  \\__,_|_|\\_\\___|  \\__\\_\\_| \\_\\""")
+{y}|_|  \\__,_|_|\\_\\___|  \\__\\_\\_| \\_\\""")
 print(w)
 print('=======================================')
 print('= https://github.com/ProgrammerPython =')
-print('=     https://github.com/AstraaDev    =')
-print('=        Discord    Fake   QR         =')
+print('=    https://discord.gg/2TNmNGWEmY    =')
+print('=        Discord    Fake    QR        =')
 print('=           @Rxg3 x @a5traa           =')
 print('=======================================')
 
 browser_number = 0
 for i, browser_dict in enumerate(browsers.values(), start=1):
-    print(f'{y}[{w}{i}{y}]{w} - {b}' + browser_dict.get("name", "Имя не указано"))
+    print(f'{y}[{b}{i}{y}]{w} - {b}' + browser_dict.get("name", "Имя не указано"))
 
 while browser_number not in browsers.keys():
     try:
-        browser_number = int(input(w + 'Выберите свой браузер: '))
+        browser_number = int(input('Выберите свой браузер: '))
     except (ValueError, TypeError):
         pass
     if browser_number in browsers.keys():
